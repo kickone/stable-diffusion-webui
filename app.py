@@ -16,9 +16,12 @@ os.system(f"wget -q https://huggingface.co/camenduru/i15/resolve/main/sd-v1-5-in
 os.system(f"wget -q https://huggingface.co/camenduru/sd14/resolve/main/sd-v1-4.ckpt -O /home/user/app/stable-diffusion-webui/models/Stable-diffusion/sd-v1-4.ckpt")
 os.system(f"wget -q https://huggingface.co/hakurei/waifu-diffusion-v1-3/resolve/main/wd-v1-3-float32.ckpt -O /home/user/app/stable-diffusion-webui/models/Stable-diffusion/wd-v1-3-float32.ckpt")
 os.chdir("/home/user/app/stable-diffusion-webui")
+# ----------------------------Duplicate this space and delete this block for Checkpoint Merger, Train, Settings, Extensions Tabs---------------------
 os.system(f"sed -i -e '/(modelmerger_interface, \"Checkpoint Merger\", \"modelmerger\"),/d' /home/user/app/stable-diffusion-webui/modules/ui.py")
 os.system(f"sed -i -e '/(train_interface, \"Train\", \"ti\"),/d' /home/user/app/stable-diffusion-webui/modules/ui.py")
 os.system(f"sed -i -e '/settings_interface, \"Settings\", \"settings\"/d' /home/user/app/stable-diffusion-webui/modules/ui.py")
 os.system(f"sed -i -e '/extensions_interface, \"Extensions\", \"extensions\"/d' /home/user/app/stable-diffusion-webui/modules/ui.py")
-os.system(f"sed -i -e 's/\"filter_nsfw\": OptionInfo(False, \"Filter NSFW content\"),/\"filter_nsfw\": OptionInfo(True, \"Filter NSFW content\"),/g' /home/user/app/stable-diffusion-webui/modules/shared.py")
+# ---------------------------------------------------------------------------------------------------------------------------------------------------
+os.system(f"cp /home/user/app/config.json /home/user/app/stable-diffusion-webui/")
+os.system(f"cp /home/user/app/ui-config.json /home/user/app/stable-diffusion-webui/")
 os.system(f"python launch.py --force-enable-xformers")
