@@ -24,4 +24,4 @@ os.system(f"sed -i -e '/extensions_interface, \"Extensions\", \"extensions\"/d' 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 os.system(f"cp /home/user/app/config.json /home/user/app/stable-diffusion-webui/")
 os.system(f"cp /home/user/app/ui-config.json /home/user/app/stable-diffusion-webui/")
-os.system(f"python launch.py --force-enable-xformers --api")
+os.system(f"python launch.py --force-enable-xformers")
