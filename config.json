@@ -84,7 +84,7 @@
     "deepbooru_sort_alpha": true,
     "deepbooru_use_spaces": false,
     "deepbooru_escape": true,
-    "show_progressbar": true,
+    "show_progressbar": false,
     "show_progress_every_n_steps": 0,
     "show_progress_grid": true,
     "return_grid": true,
