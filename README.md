@@ -1,5 +1,5 @@
 ---
-title: Sandbox
+title: webui
 emoji: 🚧
 colorFrom: yellow
 colorTo: yellow
