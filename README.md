@@ -1,5 +1,5 @@
 ---
-title: webui
+title: Stable Diffusion Web UI
 emoji: 🚧
 colorFrom: yellow
 colorTo: yellow
