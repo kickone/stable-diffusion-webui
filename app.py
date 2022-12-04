@@ -11,5 +11,5 @@ os.system(f"git clone https://github.com/camenduru/stable-diffusion-webui /home/
 os.system(f"wget -q https://huggingface.co/camenduru/sd14/resolve/main/sd-v1-4.ckpt -O /home/user/app/stable-diffusion-webui/models/Stable-diffusion/sd-v1-4.ckpt")
 os.chdir("/home/user/app/stable-diffusion-webui")
 os.system(f"pwd")
-os.system(f"python launch.py --share --force-enable-xformers")
+os.system(f"python launch.py --force-enable-xformers")
 
