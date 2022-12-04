@@ -1,7 +1,7 @@
 import os
 
 os.system(f"python --version")
-os.system(f"pip uninstall gradio")
+os.system(f"pip uninstall gradio -y")
 os.system(f"pip show gradio")
 os.system(f"uname -r")
 os.system(f"nvidia-smi")
@@ -13,5 +13,6 @@ os.system(f"git clone https://github.com/camenduru/stable-diffusion-webui /home/
 os.system(f"wget -q https://huggingface.co/camenduru/sd14/resolve/main/sd-v1-4.ckpt -O /home/user/app/stable-diffusion-webui/models/Stable-diffusion/sd-v1-4.ckpt")
 os.chdir("/home/user/app/stable-diffusion-webui")
 os.system(f"pwd")
+os.system(f"pip show gradio")
 os.system(f"python launch.py --force-enable-xformers")
 
