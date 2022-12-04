@@ -22,6 +22,4 @@ os.system(f"sed -i -e '/(train_interface, \"Train\", \"ti\"),/d' /home/user/app/
 os.system(f"sed -i -e '/settings_interface, \"Settings\", \"settings\"/d' /home/user/app/stable-diffusion-webui/modules/ui.py")
 os.system(f"sed -i -e '/extensions_interface, \"Extensions\", \"extensions\"/d' /home/user/app/stable-diffusion-webui/modules/ui.py")
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
-os.system(f"cp /home/user/app/config.json /home/user/app/stable-diffusion-webui/")
-os.system(f"cp /home/user/app/ui-config.json /home/user/app/stable-diffusion-webui/")
-os.system(f"python launch.py --force-enable-xformers")
+os.system(f"python launch.py --force-enable-xformers --disable-console-progressbars --enable-console-prompts --cors-allow-origins --cors-allow-origins-regex --gradio-debug --ui-config-file --ui-config-file /home/user/app/ui-config.json --ui-settings-file /home/user/app/config.json")
