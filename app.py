@@ -1,7 +1,6 @@
 import os
 from subprocess import getoutput
 gpu_info = getoutput('nvidia-smi')
-print(gpu_info)
 if("A10G" in gpu_info):
     os.system(f"pip install -q https://github.com/camenduru/stable-diffusion-webui-colab/releases/download/0.0.15/xformers-0.0.15.dev0+4c06c79.d20221205-cp38-cp38-linux_x86_64.whl")
 elif("T4" in gpu_info):
@@ -17,6 +16,5 @@ os.system(f"sed -i -e '/settings_interface, \"Settings\", \"settings\"/d' /home/
 os.system(f"sed -i -e '/extensions_interface, \"Extensions\", \"extensions\"/d' /home/user/app/stable-diffusion-webui/modules/ui.py")
 # ---------------------------------------------------------------------------------------------------------------------------------------------------
 os.system(f"sed -i -e 's/shared.demo.launch/shared.demo.queue().launch/g' /home/user/app/stable-diffusion-webui/webui.py")
-webui_py = getoutput('cat /home/user/app/stable-diffusion-webui/webui.py')
-print(webui_py)
+os.system(f'''sed -i -e "s/document.getElementsByTagName('gradio-app')\[0\].shadowRoot/document/g" /home/user/app/stable-diffusion-webui/script.js''')
 os.system(f"python launch.py --force-enable-xformers --disable-console-progressbars --enable-console-prompts --ui-config-file /home/user/app/ui-config.json --ui-settings-file /home/user/app/config.json --cors-allow-origins huggingface.co,hf.space")
