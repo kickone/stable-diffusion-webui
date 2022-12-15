@@ -7,7 +7,7 @@ if("A10G" in gpu_info):
 elif("T4" in gpu_info):
     os.system(f"pip install -q https://github.com/camenduru/stable-diffusion-webui-colab/releases/download/0.0.15/xformers-0.0.15.dev0+1515f77.d20221130-cp38-cp38-linux_x86_64.whl")
 
-os.system(f"git clone https://github.com/camenduru/stable-diffusion-webui /home/user/app/stable-diffusion-webui")
+os.system(f"git clone -b v1.5 https://github.com/camenduru/stable-diffusion-webui /home/user/app/stable-diffusion-webui")
 os.chdir("/home/user/app/stable-diffusion-webui")
 
 os.system(f"wget -q https://github.com/camenduru/webui/raw/main/env_patch.py -O /home/user/app/env_patch.py")
